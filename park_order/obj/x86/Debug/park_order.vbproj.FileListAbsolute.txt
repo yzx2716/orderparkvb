@@ -22,3 +22,16 @@ D:\vb_study\park_order\park_order\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\vb_study\park_order\park_order\obj\x86\Debug\park_order.order_main.resources
 D:\vb_study\park_order\park_order\bin\Debug\park_order.exe.config
 D:\vb_study\park_order\park_order\obj\x86\Debug\park_order.Notice.resources
+D:\vb_study\orderparkvb\park_order\bin\Debug\park_order.exe.config
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\park_order.exe
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\park_order.xml
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\park_order.pdb
+D:\vb_study\orderparkvb\park_order\bin\Debug\park_order.exe
+D:\vb_study\orderparkvb\park_order\bin\Debug\park_order.pdb
+D:\vb_study\orderparkvb\park_order\bin\Debug\park_order.xml
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\park_order.Notice.resources
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\park_order.Order_main.resources
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\park_order.Resources.resources
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\vb_study\orderparkvb\park_order\obj\x86\Debug\GenerateResource.write.1.tlog

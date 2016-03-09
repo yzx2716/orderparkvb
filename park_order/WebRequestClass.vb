@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Net
 Imports System.Text
+Imports System.Xml
 
 Public Class WebRequestClass
 
@@ -10,8 +11,9 @@ Public Class WebRequestClass
     Public Sub New()
         'MyClass.url = url
     End Sub
-
+    'get获取数据
     Public Function getRequest(ByVal url As String)
+
         Dim request As WebRequest = WebRequest.Create(url)
         request.Credentials = CredentialCache.DefaultCredentials
 
@@ -30,7 +32,7 @@ Public Class WebRequestClass
 
         Return responseFromServer
     End Function
-
+    'post提交数据
     Public Function postRequest(ByVal url As String, ByVal postData As String)
         Dim request As WebRequest = WebRequest.Create(url)
 
@@ -62,5 +64,26 @@ Public Class WebRequestClass
 
         Return responseFromServer
     End Function
+
+    '解析xml
+    Public Function analyzeXml(ByVal xml_content As String)
+        Dim xmlDoc As New XmlDocument
+        xmlDoc.LoadXml(xml_content)
+        Dim xn As XmlNode = xmlDoc.SelectSingleNode("order_info")
+        Dim xnl As XmlNodeList = xn.ChildNodes
+        Dim xnf As XmlNode
+        For Each xnf In xnl
+            Dim xe = xnf.Attributes.GetNamedItem("mes_id").Value
+            MsgBox(xe)
+
+            Dim ye As XmlNode = xnf.SelectSingleNode("nick_name")
+            'MsgBox(ye.InnerText.ToString)
+
+
+        Next
+
+        Return True
+    End Function
+
 End Class
 

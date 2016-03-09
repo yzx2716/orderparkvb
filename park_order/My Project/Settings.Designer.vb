@@ -56,13 +56,25 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("预约停车系统")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("小马预约停车系统")>  _
         Public Property main_name() As String
             Get
                 Return CType(Me("main_name"),String)
             End Get
             Set
                 Me("main_name") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://jddian.net/index.php/Home/Client/getMessage")>  _
+        Public Property host_url() As String
+            Get
+                Return CType(Me("host_url"),String)
+            End Get
+            Set
+                Me("host_url") = value
             End Set
         End Property
     End Class

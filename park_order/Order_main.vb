@@ -4,6 +4,8 @@ Imports System.Text
 Public Class Order_main
 
     Dim main_title As String = My.Settings.main_name
+    Dim host_url As String = My.Settings.host_url
+    Dim WebClass As New WebRequestClass
 
     Private Declare Function OpenIcon Lib "user32.dll" (ByVal hWnd As IntPtr) As Boolean
     Private Declare Function IsIconic Lib "user32.dll" (ByVal hWnd As IntPtr) As Boolean
@@ -18,6 +20,11 @@ Public Class Order_main
     ''' <remarks></remarks>
     Private Sub Order_main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Text = Me.main_title
+
+
+        Dim mes_xml As String = Me.WebClass.getRequest(Me.host_url)
+        Dim mes_back As String = Me.WebClass.analyzeXml(mes_xml)
+
     End Sub
 
     ''' <summary>
@@ -76,6 +83,9 @@ Public Class Order_main
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+
+
+
 
     End Sub
 End Class

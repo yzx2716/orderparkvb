@@ -3,7 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="main_name" Type="System.String" Scope="User">
-      <Value Profile="(Default)">预约停车系统</Value>
+      <Value Profile="(Default)">小马预约停车系统</Value>
+    </Setting>
+    <Setting Name="host_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://jddian.net/index.php/Home/Client/getMessage</Value>
     </Setting>
   </Settings>
 </SettingsFile>
