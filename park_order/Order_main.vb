@@ -1,6 +1,9 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports System.Text
+
+Imports System.Xml
+Imports System.Collections
 Public Class Order_main
 
     Dim main_title As String = My.Settings.main_name
@@ -21,9 +24,8 @@ Public Class Order_main
     Private Sub Order_main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Text = Me.main_title
 
-
-        Dim mes_xml As String = Me.WebClass.getRequest(Me.host_url)
-        Dim mes_back As String = Me.WebClass.analyzeXml(mes_xml)
+        Me.Operate_Notice()
+        
 
     End Sub
 
@@ -87,5 +89,30 @@ Public Class Order_main
 
 
 
+    End Sub
+
+    Private Sub Operate_Notice()
+        '数组用于保存已处理过的数据
+        Dim hasNoticeList As New ArrayList
+        '获取服务器数据
+        Dim mes_xml As String = Me.WebClass.getRequest(Me.host_url)
+        Dim xmlDoc As New XmlDocument
+        xmlDoc.LoadXml(mes_xml)
+        Dim xn As XmlNode = xmlDoc.SelectSingleNode("order_info")
+        Dim xnl As XmlNodeList = xn.ChildNodes
+        Dim xnf As XmlNode
+        For Each xnf In xnl
+            Dim mes_id = xnf.Attributes.GetNamedItem("mes_id").Value
+            '已处理数据
+            If hasNoticeList.Contains(mes_id) Then
+                Continue For
+            End If
+
+            Dim action As XmlNode = xnf.SelectSingleNode("action")
+            Dim content As XmlNode = xnf.SelectSingleNode("content")
+            Dim notice As New Notice(action, content)
+
+            hasNoticeList.Add(mes_id)
+        Next
     End Sub
 End Class

@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.Net
 Imports System.Text
-Imports System.Xml
+'Imports System.Xml
 
 Public Class WebRequestClass
 
@@ -66,24 +66,24 @@ Public Class WebRequestClass
     End Function
 
     '解析xml
-    Public Function analyzeXml(ByVal xml_content As String)
-        Dim xmlDoc As New XmlDocument
-        xmlDoc.LoadXml(xml_content)
-        Dim xn As XmlNode = xmlDoc.SelectSingleNode("order_info")
-        Dim xnl As XmlNodeList = xn.ChildNodes
-        Dim xnf As XmlNode
-        For Each xnf In xnl
-            Dim xe = xnf.Attributes.GetNamedItem("mes_id").Value
-            MsgBox(xe)
+    'Public Function analyzeXml(ByVal xml_content As String)
+    '    Dim xmlDoc As New XmlDocument
+    '    xmlDoc.LoadXml(xml_content)
+    '    Dim xn As XmlNode = xmlDoc.SelectSingleNode("order_info")
+    '    Dim xnl As XmlNodeList = xn.ChildNodes
+    '    Dim xnf As XmlNode
+    '    For Each xnf In xnl
+    '        Dim xe = xnf.Attributes.GetNamedItem("mes_id").Value
+    '        MsgBox(xe)
 
-            Dim ye As XmlNode = xnf.SelectSingleNode("nick_name")
-            'MsgBox(ye.InnerText.ToString)
+    '        Dim ye As XmlNode = xnf.SelectSingleNode("nick_name")
+    '        'MsgBox(ye.InnerText.ToString)
 
 
-        Next
+    '    Next
 
-        Return True
-    End Function
+    '    Return True
+    'End Function
 
 End Class
 

@@ -1,6 +1,6 @@
 ﻿Public Class Notice
 
-    Public Sub New(ByVal content, ByVal action)
+    Public Sub New(ByVal action, ByVal content)
 
         ' 此调用是设计器所必需的。
         InitializeComponent()
