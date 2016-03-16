@@ -108,10 +108,11 @@ Public Class Order_main
                 Continue For
             End If
 
-            Dim action As XmlNode = xnf.SelectSingleNode("action")
+            Dim tran_type As XmlNode = xnf.SelectSingleNode("tran_type")
             Dim content As XmlNode = xnf.SelectSingleNode("content")
-            Dim notice As New Notice(action, content)
-
+            Dim time As XmlNode = xnf.SelectSingleNode("time")
+            Dim notice As New Notice(tran_type, content, time)
+            '加入到已处理数据中
             hasNoticeList.Add(mes_id)
         Next
     End Sub
